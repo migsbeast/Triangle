@@ -12,7 +12,10 @@ public class Main {
             double c = scanner.nextDouble();
             testTri.setSides(a, b, c);
 
-            if (testTri.right()) {
+            if (testTri.equilateral()) {
+                System.out.println("The Triangle is an equilateral Triangle!");
+            }
+            else if (testTri.right()) {
                 if (testTri.isosceles()) {
                     System.out.println("The Triangle is an isosceles right Triangle!");
                 } else if (testTri.scalene()) {
@@ -20,8 +23,6 @@ public class Main {
                 } else {
                     System.out.println("The Triangle is an right Triangle!");
                 }
-            } else if (testTri.equilateral()) {
-                System.out.println("The Triangle is an equilateral Triangle!");
             } else if (testTri.isosceles()) {
                 System.out.println("The Triangle is an isosceles Triangle!");
             } else if (testTri.scalene()) {
