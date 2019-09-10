@@ -59,4 +59,10 @@ public class Triangle {
         }
         return false;
     }
+
+    public double getArea(){
+        double semiPerm = (sideA + sideB + sideC)/2;
+        double area = Math.sqrt((semiPerm)*(semiPerm-sideA)*(semiPerm-sideB)*(semiPerm-sideC));
+        return area;
+    }
 }

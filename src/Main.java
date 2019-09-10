@@ -1,4 +1,6 @@
 import Tri.Triangle;
+
+import java.text.DecimalFormat;
 import java.util.*;
 public class Main {
     public static void main(String []args){
@@ -11,6 +13,9 @@ public class Main {
             double b = scanner.nextDouble();
             double c = scanner.nextDouble();
             testTri.setSides(a, b, c);
+            double area = testTri.getArea();
+            DecimalFormat df = new DecimalFormat("#.##");
+
 
             if (testTri.equilateral()) {
                 System.out.println("The Triangle is an equilateral Triangle!");
@@ -28,6 +33,8 @@ public class Main {
             } else if (testTri.scalene()) {
                 System.out.println("The Triangle is an scalene Triangle!");
             }
+
+            System.out.println("The area of the Triangle is: "+ df.format(area));
 
             System.out.println("Continue? (Y/N)");
             ans = scanner.next().charAt(0);
