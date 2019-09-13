@@ -3,12 +3,20 @@ package Tri;
 import java.util.Scanner;
 import java.lang.Math;
 
-public class Triangle {
+public class Triangle{
     private static double sideA, sideB, sideC;
-    private static Triangle t;
 
-    public void Triangle(){
-        t = new Triangle();
+    public Triangle(){
+        sideA = 0;
+        sideB = 0;
+        sideC = 0;
+    }
+
+    public Triangle(Point a, Point b, Point c){
+        double sideA = a.distance(b);
+        double sideB = b.distance(c);
+        double sideC = c.distance(a);
+        this.setSides(sideA,sideB,sideC);
     }
 
     public void setSides(double a, double b, double c){
@@ -58,6 +66,25 @@ public class Triangle {
             return true;
         }
         return false;
+    }
+
+    public void checkType(){
+        if (this.equilateral()) {
+            System.out.println("The Triangle is an equilateral Triangle!");
+        }
+        else if (this.right()) {
+            if (this.isosceles()) {
+                System.out.println("The Triangle is an isosceles right Triangle!");
+            } else if (this.scalene()) {
+                System.out.println("The Triangle is an scalene right Triangle!");
+            } else {
+                System.out.println("The Triangle is an right Triangle!");
+            }
+        } else if (this.isosceles()) {
+            System.out.println("The Triangle is an isosceles Triangle!");
+        } else if (this.scalene()) {
+            System.out.println("The Triangle is an scalene Triangle!");
+        }
     }
 
     public double getArea(){
