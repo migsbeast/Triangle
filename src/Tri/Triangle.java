@@ -11,7 +11,7 @@ public class Triangle{
         sideB = 0;
         sideC = 0;
     }
-
+    //HW2
     public Triangle(Point a, Point b, Point c){
         double sideA = a.distance(b);
         double sideB = b.distance(c);
@@ -67,7 +67,7 @@ public class Triangle{
         }
         return false;
     }
-
+    //HW1
     public void checkType(){
         if (this.equilateral()) {
             System.out.println("The Triangle is an equilateral Triangle!");
@@ -86,7 +86,7 @@ public class Triangle{
             System.out.println("The Triangle is an scalene Triangle!");
         }
     }
-
+    //HW2
     public double getArea(){
         double semiPerm = (sideA + sideB + sideC)/2;
         double area = Math.sqrt((semiPerm)*(semiPerm-sideA)*(semiPerm-sideB)*(semiPerm-sideC));
